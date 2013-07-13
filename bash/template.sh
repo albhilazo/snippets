@@ -13,9 +13,11 @@
 ####################################################################################################
 
 
-dir=/foo/bar
+path=`dirname $(readlink -f $0)`    # Script path. Resolves symlinks.
+me=`basename $0`
 output=$0.output
 tmpdir=$0.tmpdir
+dir=/foo/bar
 file=${@: -1}     # Gets last parameter as the input file
 
 # Parameter flags
@@ -28,14 +30,14 @@ op3=0
 
 function showHelp
 {
-        echo -e "\n$0 help:"
-        echo -e "\tSyntax: $0 [ -op1 | -op2 | -op3 ] [ <file> | <whatever> ]"
-        echo -e "\t        $0 [ -h | --help ]\n"
-        echo -e "\tParameters:"
-        echo -e "\t\t-op1:       Foo bar."
-        echo -e "\t\t-op2:       Foo bar."
-        echo -e "\t\t-op3:       Foo bar."
-        exit 0
+    echo -e "\n$me help:"
+    echo -e "\tSyntax: $me [ -op1 | -op2 | -op3 ] [ <file> | <whatever> ]"
+    echo -e "\t        $me [ -h | --help ]\n"
+    echo -e "\tParameters:"
+    echo -e "\t\t-op1:  Foo bar."
+    echo -e "\t\t-op2:  Foo bar."
+    echo -e "\t\t-op3:  Foo bar.\n"
+    exit 0
 }
 
 
@@ -44,39 +46,39 @@ function showHelp
 # Check params
 if [ $# -eq 0 ]
 then
-        showHelp
+    showHelp
 fi
 for param in "$@"
 do
-        case "$param" in
-                "-h" | "--help" )
-                        showHelp
-                ;;
-                "-op1" )
-                        op1=1
-                ;;
-                "-op2" )
-                        op2=1
-                ;;
-                "-op3" )
-                        op3=1
-                ;;
-                * )
-                        if [ $param != "$file" ]
-                        then
-                                echo -e "\nInvalid $param parameter!"
-                                showHelp
-                        fi
-                ;;
-        esac
+    case "$param" in
+        "-h" | "--help" )
+            showHelp
+        ;;
+        "-op1" )
+            op1=1
+        ;;
+        "-op2" )
+            op2=1
+        ;;
+        "-op3" )
+            op3=1
+        ;;
+        * )
+            if [ $param != "$file" ]
+            then
+                echo -e "\nInvalid $param parameter!"
+                showHelp
+            fi
+        ;;
+    esac
 done
 
 
 # Check if given file exists
 if [ ! -f "$file" ]
 then
-        echo -e "\n\t[ERROR] $file file does not exist!\n"
-        exit 1
+    echo -e "\n\t[ERROR] $file file does not exist!\n"
+    exit 1
 fi
 
 
@@ -84,13 +86,13 @@ fi
 echo -n "" > $output
 if [ -d $tmpdir ]
 then
-        rm -rf $tmpdir
+    rm -rf $tmpdir
 fi
 
 
 if [ $op1 -eq 1 ]
 then
-        # CODE HERE
+    # CODE HERE
 fi
 
 

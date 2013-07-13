@@ -2,7 +2,7 @@ declare -A top
 
 
 # Counting the times an entry appears
-cat $input | while read entry
+cat $file | while read entry
 do
 	if [ ${top[$entry]+_} ]
 	then
