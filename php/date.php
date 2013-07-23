@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Returns a given date in YYYYMMDDHHMMSS format
  * @param $row_date	Date in 'd/m/y H:i' format
@@ -10,3 +12,5 @@ function get_date($row_date)
 	// YYYYMMDDHHMMSS = YmdHis
 	return $date->format('YmdHis');
 }
+
+?>

@@ -51,6 +51,9 @@ case "$1" in
     "date" )
         openSnippet $path/date.php
     ;;
+    "form" )
+        openSnippet $path/form.php
+    ;;
     * )
         echo -e "\nInvalid $param parameter!"
         showHelp
