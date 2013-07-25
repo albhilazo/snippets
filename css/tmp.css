@@ -1,0 +1,38 @@
+.shadow {
+        box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;
+        -moz-box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;
+        -webkit-box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;
+        }
+
+.center-block {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        }
+		
+.align-bottom {
+        display: table-cell;
+        vertical-align: bottom;
+        float: none;
+        }
+		
+/* Go-top button */
+#goTop {
+        display: none;
+        background: #addfee;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        }
+
+#goTop:hover {
+        background: #2f96b4;
+        }
+
+.top-icon {
+        width: 21px;
+        height: 21px;
+        margin: 6px;
+        background-size: 703.5px 238.5px;
+        background-position: -432px -181px;
+        }
