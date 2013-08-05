@@ -20,11 +20,6 @@ tmpdir=$0.tmpdir
 dir=/foo/bar
 file=${@: -1}     # Gets last parameter as the input file
 
-# Parameter flags
-op1=0
-op2=0
-op3=0
-
 
 
 
@@ -43,35 +38,13 @@ function showHelp
 
 
 
-# Check params
-if [ $# -eq 0 ]
-then
-    showHelp
-fi
-for param in "$@"
-do
-    case "$param" in
-        "-h" | "--help" )
-            showHelp
-        ;;
-        "-op1" )
-            op1=1
-        ;;
-        "-op2" )
-            op2=1
-        ;;
-        "-op3" )
-            op3=1
-        ;;
-        * )
-            if [ $param != "$file" ]
-            then
-                echo -e "\nInvalid $param parameter!"
-                showHelp
-            fi
-        ;;
-    esac
-done
+# DESCRIPTION
+function op1
+{
+    # CODE HERE
+}
+
+
 
 
 # Check if given file exists
@@ -90,10 +63,35 @@ then
 fi
 
 
-if [ $op1 -eq 1 ]
+# Check params
+if [ $# -eq 0 ]
 then
-    # CODE HERE
+    showHelp
 fi
+for param in "$@"
+do
+    case "$param" in
+        "-h" | "--help" )
+            showHelp
+        ;;
+        "-op1" )
+            op1
+        ;;
+        "-op2" )
+            op2
+        ;;
+        "-op3" )
+            op3
+        ;;
+        * )
+            if [ $param != "$file" ]
+            then
+                echo -e "\nInvalid $param parameter!"
+                showHelp
+            fi
+        ;;
+    esac
+done
 
 
 rm -rf $tmpdir
