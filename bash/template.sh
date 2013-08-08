@@ -16,7 +16,6 @@
 path=`dirname $(readlink -f $0)`    # Script path. Resolves symlinks.
 me=`basename $0`
 output=$0.output
-tmpdir=$0.tmpdir
 dir=/foo/bar
 file=${@: -1}     # Gets last parameter as the input file
 
@@ -57,11 +56,6 @@ fi
 
 # Reset output file
 echo -n "" > $output
-if [ -d $tmpdir ]
-then
-    rm -rf $tmpdir
-fi
-
 
 # Check params
 if [ $# -eq 0 ]
@@ -77,12 +71,6 @@ do
         "-op1" )
             op1
         ;;
-        "-op2" )
-            op2
-        ;;
-        "-op3" )
-            op3
-        ;;
         * )
             if [ $param != "$file" ]
             then
@@ -93,8 +81,6 @@ do
     esac
 done
 
-
-rm -rf $tmpdir
 
 echo -e "\nOutput file: $output"
 
