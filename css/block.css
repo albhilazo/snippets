@@ -1,0 +1,19 @@
+/* Block styles */
+.shadow {
+    box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;
+    }
+
+/* Aligning */
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    }
+
+.align-bottom {
+    display: table-cell;
+    vertical-align: bottom;
+    float: none;
+    }
