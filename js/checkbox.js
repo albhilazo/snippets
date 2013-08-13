@@ -1,4 +1,5 @@
 /* Check all checkboxes on click */
+// Another plugin: https://github.com/CSS-Tricks/Indeterminate-Checkboxes
 
 /** HTML **
 <label id="showall">Show:</label>
