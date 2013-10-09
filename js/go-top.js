@@ -7,9 +7,9 @@
 */
 
 $(window).scroll(function() {
-	// Set offset inside scroll function in case it changes
-	// due to other dynamic elements
-	var offset = $("#table-events").offset().top;
+    // Set offset inside scroll function in case it changes
+    // due to other dynamic elements
+    var offset = $("#table-events").offset().top;
 
     if ($(window).scrollTop() >= offset) {
         $("#goTop").fadeIn();

@@ -1,23 +1,25 @@
 #!/bin/bash
 
-####################################################################################################
-##                                                                                                ##
-##    Syntax: .sh [ -op1 | -op2 | -op3 ] [ <file> | <whatever> ]                                  ##
-##            .sh [ -h | --help ]                                                                 ##
-##                                                                                                ##
-##    Parameters:                                                                                 ##
-##            -op1:       Foo bar.                                                                ##
-##            -op2:       Foo bar.                                                                ##
-##            -op3:       Foo bar.                                                                ##
-##                                                                                                ##
-####################################################################################################
+##################################################################
+##                                                              ##
+##    Description                                               ##
+##                                                              ##
+##    Syntax: .sh <parameters> [ <file> | <whatever> ]          ##
+##            .sh [ -h | --help ]                               ##
+##                                                              ##
+##    Parameters:                                               ##
+##            -op1    Foo bar.                                  ##
+##            -op2    Foo bar.                                  ##
+##            -op3    Foo bar.                                  ##
+##                                                              ##
+##################################################################
 
 
 path=`dirname $(readlink -f $0)`    # Script path. Resolves symlinks.
-me=`basename $0`
-output=$0.output
+me=`basename $0`                    # script.sh
+output=${me%.*}.out                 # script.out
+input=${@: -1}                      # Gets last parameter as the input file
 dir=/foo/bar
-file=${@: -1}     # Gets last parameter as the input file
 
 
 
@@ -25,12 +27,12 @@ file=${@: -1}     # Gets last parameter as the input file
 function showHelp
 {
     echo -e "\n$me help:"
-    echo -e "\tSyntax: $me [ -op1 | -op2 | -op3 ] [ <file> | <whatever> ]"
+    echo -e "\tSyntax: $me <parameters> [ <file> | <whatever> ]"
     echo -e "\t        $me [ -h | --help ]\n"
     echo -e "\tParameters:"
-    echo -e "\t\t-op1:  Foo bar."
-    echo -e "\t\t-op2:  Foo bar."
-    echo -e "\t\t-op3:  Foo bar.\n"
+    echo -e "\t\t-op1    Foo bar."
+    echo -e "\t\t-op2    Foo bar."
+    echo -e "\t\t-op3    Foo bar.\n"
     exit 0
 }
 
@@ -47,9 +49,9 @@ function op1
 
 
 # Check if given file exists
-if [ ! -f "$file" ]
+if [ ! -f "$input" ]
 then
-    echo -e "\n\t[ERROR] $file file does not exist!\n"
+    echo -e "\n\t[ERROR] $input file does not exist!\n"
     exit 1
 fi
 
@@ -72,7 +74,7 @@ do
             op1
         ;;
         * )
-            if [ $param != "$file" ]
+            if [ $param != "$input" ]
             then
                 echo -e "\nInvalid $param parameter!"
                 showHelp

@@ -1,7 +1,7 @@
 /* Text styles */
 .grey-text {
-	color: #575757;
-	}
+    color: #575757;
+    }
 
 /* Disable text select/highlight */
 .no-select {
@@ -11,4 +11,4 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+    }

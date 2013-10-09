@@ -1,0 +1,35 @@
+/* Custom button */
+.btn-custom {
+    border: 0px none;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    
+    -moz-box-shadow: 0px 3px 1px 0px #276873;
+    -webkit-box-shadow: 0px 3px 1px 0px #276873;
+    box-shadow: 0px 3px 1px 0px #276873;
+
+    background-color:#0693be;
+
+    display:inline-block;
+    color:#ffffff;
+    padding:4px 12px;
+
+    font-family:Verdana;
+    font-size:13px;
+    font-weight:normal;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+    }
+
+.btn-custom:hover {
+    background-color:#339dbd;
+    }
+
+.btn-custom:active {
+    position:relative;
+    top:3px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    }
