@@ -8,9 +8,9 @@
 ##            .sh [ -h | --help ]                               ##
 ##                                                              ##
 ##    Parameters:                                               ##
-##            -op1    Foo bar.                                  ##
-##            -op2    Foo bar.                                  ##
-##            -op3    Foo bar.                                  ##
+##            -op1    Foo bar                                   ##
+##            -op2    Foo bar                                   ##
+##            -op3    Foo bar                                   ##
 ##                                                              ##
 ##################################################################
 
@@ -27,12 +27,13 @@ dir=/foo/bar
 function showHelp
 {
     echo -e "\n$me help:"
+    echo -e "\tDescription\n"
     echo -e "\tSyntax: $me <parameters> [ <file> | <whatever> ]"
     echo -e "\t        $me [ -h | --help ]\n"
     echo -e "\tParameters:"
-    echo -e "\t\t-op1    Foo bar."
-    echo -e "\t\t-op2    Foo bar."
-    echo -e "\t\t-op3    Foo bar.\n"
+    echo -e "\t\t-op1    Foo bar"
+    echo -e "\t\t-op2    Foo bar"
+    echo -e "\t\t-op3    Foo bar\n"
     exit 0
 }
 
@@ -77,7 +78,7 @@ do
         * )
             if [ $param != "$input" ]
             then
-                echo -e "\nInvalid $param parameter!"
+                echo -e "\n\t[ERROR] Invalid $param parameter!"
                 showHelp
             fi
         ;;
