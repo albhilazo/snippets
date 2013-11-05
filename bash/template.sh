@@ -51,13 +51,14 @@ function op1
 # Check if given file exists
 if [ ! -f "$input" ]
 then
-    echo -e "\n\t[ERROR] $input file does not exist!\n"
+    echo -e "\n\t[ERROR] File $input does not exist!\n"
     exit 1
 fi
 
 
 # Reset output file
-echo -n "" > $output
+> $output
+
 
 # Check params
 if [ $# -eq 0 ]
