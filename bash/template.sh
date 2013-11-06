@@ -52,7 +52,7 @@ function op1
 # Check if given file exists
 if [ ! -f "$input" ]
 then
-    echo -e "\n\t[ERROR] File $input does not exist!\n"
+    echo -e "\n\t[ERROR] File $input not found\n"
     exit 1
 fi
 
@@ -78,7 +78,7 @@ do
         * )
             if [ $param != "$input" ]
             then
-                echo -e "\n\t[ERROR] Invalid $param parameter!"
+                echo -e "\n\t[ERROR] Invalid $param parameter\n"
                 showHelp
             fi
         ;;
