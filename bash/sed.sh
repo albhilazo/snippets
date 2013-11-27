@@ -1,5 +1,15 @@
+## grep ##
+
+# Filter out empty and commented (#) lines with or without tabs or spaces
+egrep -v '(^#|^\s*$|^\s*\t*#)' $file
+
+
+
+
+## sed ##
+
 # Replace 'str1' for 'str2' in a file
-sed -i 's/str1/str2/g' file.txt
+sed -i 's/str1/str2/g' $file
 
 # Remove leading white spaces
 sed 's/^ *//g'
