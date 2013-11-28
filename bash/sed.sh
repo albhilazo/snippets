@@ -3,6 +3,9 @@
 # Filter out empty and commented (#) lines with or without tabs or spaces
 egrep -v '(^#|^\s*$|^\s*\t*#)' $file
 
+# Count lines ignoring spaces and empty lines
+grep -c '[^[:space:]]' $file
+
 
 
 
