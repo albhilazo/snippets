@@ -4,11 +4,12 @@
 ##                                                        ##
 ##    Load snippets for specific programming languages    ##
 ##                                                        ##
-##    Syntax: snippets.sh <parameter> [ <snippet> ]       ##
-##            snippets.sh <parameter> [ -h | --help ]     ##
+##    Syntax: snippets.sh <language> [ <snippet> ]        ##
+##            snippets.sh <language> [ -h | --help ]      ##
 ##            snippets.sh [ -h | --help ]                 ##
 ##                                                        ##
-##    Parameters:                                         ##
+##    Languages:                                          ##
+##            android                                     ##
 ##            bash                                        ##
 ##            css                                         ##
 ##            js                                          ##
@@ -19,7 +20,6 @@
 
 path=$(dirname $(readlink -f $0))    # Script path. Resolves symlinks.
 me=$(basename $0)                    # script.sh
-input=${@: -1}                       # Gets last parameter as the input file
 
 
 
@@ -27,63 +27,65 @@ input=${@: -1}                       # Gets last parameter as the input file
 function showHelp
 {
     echo -e "\n$me help:"
-    echo -e "\tSyntax: $me <parameters> [ <file> | <whatever> ]"
+    echo -e "\tLoad snippets for specific programming languages\n"
+    echo -e "\tSyntax: $me <language> [ <snippet> ]"
+    echo -e "\t        $me <language> [ -h | --help ]"
     echo -e "\t        $me [ -h | --help ]\n"
-    echo -e "\tParameters:"
-    echo -e "\t\t-op1    Foo bar."
-    echo -e "\t\t-op2    Foo bar."
-    echo -e "\t\t-op3    Foo bar.\n"
+    echo -e "\tLanguages:"
+    echo -e "\t\tandroid"
+    echo -e "\t\tbash"
+    echo -e "\t\tcss"
+    echo -e "\t\tjs"
+    echo -e "\t\tphp\n"
     exit 0
 }
 
 
 
 
-# DESCRIPTION
-function op1
+# Prints a list of the sections available for the given language
+# @param $1    Language name/directory
+function showSections
 {
-    # CODE HERE
+    echo -e "\nSections available for $(tr '[:lower:]' '[:upper:]' <<< "$1"):"
+    while read row
+    do
+        echo -e "\t${row%.*}"
+    done < <(ls -d $path/$1/*/)
 }
 
 
 
-
-# Check if given file exists
-if [ ! -f "$input" ]
-then
-    echo -e "\n\t[ERROR] $input file does not exist!\n"
-    exit 1
-fi
-
-
-# Reset output file
-echo -n "" > $output
 
 # Check params
 if [ $# -eq 0 ]
 then
     showHelp
 fi
-for param in "$@"
-do
-    case "$param" in
-        "-h" | "--help" )
-            showHelp
-        ;;
-        "-op1" )
-            op1
-        ;;
-        * )
-            if [ $param != "$input" ]
-            then
-                echo -e "\nInvalid $param parameter!"
-                showHelp
-            fi
-        ;;
-    esac
-done
+case "$1" in
+    "-h" | "--help" )
+        showHelp
+    ;;
+    "android" )
+        showSections $1 # TODO: comprobar $2 antes y usar esta llamada genérica????
+    ;;
+    "bash" )
+        showSections $1
+    ;;
+    "css" )
+        showSections $1
+    ;;
+    "js" )
+        showSections $1
+    ;;
+    "php" )
+        showSections $1
+    ;;
+    * )
+        echo -e "\n\t[ERROR] Invalid $param parameter\n"
+        showHelp
+    ;;
+esac
 
-
-echo -e "\nOutput file: $output"
 
 exit 0

@@ -4,6 +4,8 @@ Collection of snippets for multiple languages or libraries.
 
 Current sections:
 
+    Android
+
 	Bash
 
 	CSS
