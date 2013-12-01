@@ -15,10 +15,10 @@
 ##################################################################
 
 
-path=`dirname $(readlink -f $0)`    # Script path. Resolves symlinks.
-me=`basename $0`                    # script.sh
-output=${me%.*}.out                 # script.out
-input=${@: -1}                      # Gets last parameter as the input file
+path=$(dirname $(readlink -f $0))    # Script path. Resolves symlinks.
+me=$(basename $0)                    # script.sh
+output=${me%.*}.out                  # script.out
+input=${@: -1}                       # Gets last parameter as the input file
 dir=/foo/bar
 
 
