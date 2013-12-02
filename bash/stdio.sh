@@ -9,10 +9,10 @@ grep "foo" < <(ls -l)
 
     # Reading STDIN from a pipe always opens a subshell with its own variable scope
     # Loop example. If done with pipes, all changes to variables will be lost
-	while read row
-	do
-		# something
-	done < <(ls -l)
+    while read row
+    do
+        # something
+    done < <(ls -l)
 
 
 # Variable or string as file
