@@ -1,7 +1,12 @@
 # STDOUT and STDERR to log file
 #   -a appends log, without it overwrites old log
 exec >  >(tee -a foo.log)
-exec 2> >(tee -a foo.log >&2)
+exec 2>&1
+
+    # The following is valid too, but two 'tee' processes may
+    #   end overlapping in the same line of the log file
+    exec >  >(tee -a foo.log)
+    exec 2> >(tee -a foo.log >&2)
 
 
 # Command to file descriptor
