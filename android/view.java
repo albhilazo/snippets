@@ -4,7 +4,9 @@
  * ListView optimization: recycling views.
  * ViewHolder usage.
  * From Google I/O 2009 [1:45-13:00]:   http://www.youtube.com/watch?v=N6YdwzAvwOA
+ *   and:   http://developer.android.com/training/improving-layouts/smooth-scrolling.html
  */
+    // Inside the Adapter Classl
     static class ViewHolder {
         TextView text;
         ImageView icon;
@@ -13,7 +15,7 @@
     public View getView( int position, View convertView, ViewGroup parent ) {
         ViewHolder holder;
         
-        if( convertView == null ) {
+        if( convertView == null ) {  // if it's not recycled, initialize some attributes
             convertView = mInflater.inflate( R.layout.item, null );
             
             holder = new ViewHolder();
