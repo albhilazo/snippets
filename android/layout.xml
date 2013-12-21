@@ -1,0 +1,5 @@
+##
+## Fix for "Error parsing XML: unbound prefix"
+##
+    # Add the following to the parent element in the xml layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
