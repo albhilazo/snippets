@@ -5,6 +5,7 @@
     -webkit-box-shadow: rgba(0,0,0, 0.2) 0px 0px 8px;
     }
 
+
 /* Aligning */
 .center-block {
     margin-left: auto;
@@ -17,3 +18,9 @@
     vertical-align: bottom;
     float: none;
     }
+
+
+/* Fill up the remaining width */
+#div1 { width: 100px; float: left; }
+#div2 { margin-left: 100px; margin-right: 100px; }
+#div3 { width: 100px; float: right; }

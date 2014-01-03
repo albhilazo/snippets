@@ -19,3 +19,11 @@ sed 's/^ *//g'
 
 # Remove trailing white spaces
 sed 's/ *$//g'
+
+
+
+
+## awk ##
+
+# Multiple delimiters
+awk -F'[/=]' '{print $3}' $file

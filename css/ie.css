@@ -1,0 +1,9 @@
+/* Internet Explorer conditional CSS
+ *
+<!--[if lte IE 7 ]> <html class='ie7'> <![endif]-->
+<!--[if IE 8 ]>     <html class='ie8'> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!--> <html class=''> <!--<![endif]-->
+*/
+.foo { color: black; } /* Awesome browsers */
+.ie8 .foo { color: green; } /* IE8 */
+.ie7 .foo { color: blue; } /* IE7- */
