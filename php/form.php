@@ -10,7 +10,7 @@
  *      Input::load_two_inline( Input $left, Input $right, $label=NULL )    *
  *                                                                          *
  *  Checkbox:                                                               *
- *      __construct( $name, $label, $labelclass, $state )                   *
+ *      __construct( $name, $id, $label, $labelclass, $state )              *
  *      load()                                                              *
  ****************************************************************************/
 
@@ -135,6 +135,7 @@ class Input
 class Checkbox
 {
     private $name;
+    private $id;
     private $label;
     private $labelclass;
     private $state;
@@ -144,13 +145,15 @@ class Checkbox
      * Constructor for a new Checkbox instance
      *
      * @param $name          Name attribute value
+     * @param $id            Id attribute value
      * @param $label         String to show next to the checkbox
      * @param $labelclass    Class to add to the label tag
      * @param $state         If the checkbox will load checked or not {TRUE|FALSE}
      */
-    public function __construct($name, $label, $labelclass, $state)
+    public function __construct($name, $id, $label, $labelclass, $state)
     {
         $this->name       = $name;
+        $this->id         = $id;
         $this->label      = $label;
         $this->labelclass = $labelclass;
         $this->state      = $state;
@@ -167,7 +170,7 @@ class Checkbox
         echo "<label class='checkbox"
                   .(($this->labelclass) ? " $this->labelclass" : "")
                   ."'>";
-        echo "<input type='checkbox' value='checked' name='$this->name'"
+        echo "<input type='checkbox' value='checked' name='$this->name' id='$this->id'"
                   .(($this->state) ? " checked" : "")
                   ."/> $this->label";
         echo "</label>";
