@@ -16,6 +16,9 @@
 
 namespace albhilazo\Form;
 
+/*
+ * WARNING: These classes were created to work with Bootstrap 2. Adapt if needed.
+ */
 
 class Input
 {
