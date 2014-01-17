@@ -23,7 +23,7 @@ class Date
     /**
      * Default timezone
      */
-    const TIMEZONE = 'Europe/Berlin';
+    const TIMEZONE = 'Europe/Andorra';
 
 
     /**
