@@ -7,14 +7,14 @@
 */
 
 $(window).scroll(function() {
-    // Set offset inside scroll function in case it changes
-    // due to other dynamic elements
-    var offset = $("#table-events").offset().top;
+    if($('.goTop-point').length) {
+        var offset = $('.goTop-point').offset().top;
 
-    if ($(window).scrollTop() >= offset) {
-        $("#goTop").fadeIn();
-    } else {
-        $("#goTop").fadeOut();
+        if ($(window).scrollTop() >= offset) {
+            $('#goTop').fadeIn();
+        } else {
+            $('#goTop').fadeOut();
+        }
     }
 });
 
