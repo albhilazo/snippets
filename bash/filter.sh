@@ -14,6 +14,9 @@ grep -c '[^[:space:]]' $file
 # Replace 'str1' for 'str2' in a file
 sed -i 's/str1/str2/g' $file
 
+# Delete a line from a file
+sed -i '/str1/d' $file
+
 # Remove leading white spaces
 sed 's/^ *//g'
 
