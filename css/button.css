@@ -2,37 +2,64 @@
  * Custom button
  * http://codepen.io/Shono/pen/Jhrvf
  */
-.btn-custom {
-    border: 0px none;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
-    border-radius:3px;
-    
-    -moz-box-shadow: 0px 3px 1px 0px #276873;
-    -webkit-box-shadow: 0px 3px 1px 0px #276873;
-    box-shadow: 0px 3px 1px 0px #276873;
+button.btn-custom,
+   div.btn-custom,
+     a.btn-custom,
+      .btn-custom {
+        background-color: #0693be;
+        color: #fff;
 
-    background-color:#0693be;
+        border: 0px none;
+        -webkit-border-radius: 3px;
+           -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+             -o-border-radius: 3px;
+                border-radius: 3px;
+        
+        -webkit-box-shadow: 0px 3px 1px 0px #276873;
+           -moz-box-shadow: 0px 3px 1px 0px #276873;
+            -ms-box-shadow: 0px 3px 1px 0px #276873;
+             -o-box-shadow: 0px 3px 1px 0px #276873;
+                box-shadow: 0px 3px 1px 0px #276873;
 
-    display:inline-block;
-    color:#ffffff;
-    padding:4px 12px;
+        display: inline-block;
+        height: auto;
+        line-height: 20px;
+        padding: 4px 12px;
+        margin-bottom: 3px;
+        cursor: pointer;
 
-    font-family:Verdana, Tahoma, sans-serif;
-    font-size:13px;
-    font-weight:normal;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #3d768a;
-    }
+        font-family: Verdana, Tahoma, sans-serif;
+        font-size: 13px;
+        font-weight: normal;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #3d768a;
+        }
 
-.btn-custom:hover {
-    background-color:#339dbd;
-    }
+button.btn-custom:enabled:hover,
+   div.btn-custom:enabled:hover,
+     a.btn-custom:enabled:hover,
+      .btn-custom:enabled:hover {
+        background-color: #339dbd;
+        }
 
-.btn-custom:active {
-    position:relative;
-    top:3px;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    }
+button.btn-custom:enabled:active,
+   div.btn-custom:enabled:active,
+     a.btn-custom:enabled:active,
+      .btn-custom:enabled:active {
+        position: relative;
+        top: 3px;
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+            -ms-box-shadow: none;
+             -o-box-shadow: none;
+                box-shadow: none;
+        }
+
+button.btn-custom:disabled,
+   div.btn-custom:disabled,
+     a.btn-custom:disabled,
+      .btn-custom:disabled {
+        cursor: not-allowed;
+        opacity: 0.65;
+        }
