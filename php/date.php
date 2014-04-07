@@ -5,7 +5,7 @@
  *  Static procedures:                                                                  *
  *      get_DMY( $ymd_date )                                                            *
  *      get_YMD( $dmy_date, $end_day=FALSE )                                            *
- *      change_timezone( $date, $timezone_from='UTC', $timezone_to='Europe/Andorra' )   *
+ *      change_timezone( $date, $timezone_from='UTC', $timezone_to='Europe/Berlin' )    *
  ****************************************************************************************/
 
 namespace albhilazo;
@@ -68,7 +68,7 @@ class Date
 
     /**
      * Returns a given date in 'd/m/y H:i' format
-     *
+     * 
      * @param $ymd_date     Date in 'Y-m-d-H.i.s' or UnixTime format
      */
     public static function get_DMY($ymd_date)
@@ -86,7 +86,7 @@ class Date
         if( preg_match( self::UNIXTIME_REGEX, $ymd_date ))
         {
             // Setting the Timezone required
-            $date = \DateTime::createFromFormat( 'U', $ymd_date )->setTimezone(new DateTimeZone( self::TIMEZONE ));
+            $date = \DateTime::createFromFormat( 'U', $ymd_date )->setTimezone(new \DateTimeZone( self::TIMEZONE ));
             return $date->format( self::DMY_HM_FORMAT );
         }
 
@@ -108,7 +108,7 @@ class Date
     /**
      * Returns a given date in 'Y-m-d-H:i:s' format
      * Accepts 2 and 4 year digits
-     *
+     * 
      * @param $dmy_date    Date in 'd/m/y H:i:s' or UnixTime format
      * @param $end_day     Optional boolean. TRUE to return last time value (23:59:59)
      */
@@ -127,7 +127,7 @@ class Date
         if( preg_match( self::UNIXTIME_REGEX, $dmy_date ))
         {
             // Setting the Timezone required
-            $date = \DateTime::createFromFormat( 'U', $dmy_date )->setTimezone(new DateTimeZone( self::TIMEZONE ));
+            $date = \DateTime::createFromFormat( 'U', $dmy_date )->setTimezone(new \DateTimeZone( self::TIMEZONE ));
             return $date->format( self::YMD_HMS_FORMAT );
         }
 
@@ -135,7 +135,7 @@ class Date
         if( preg_match( self::DMYY_REGEX, $dmy_date ))           $year_2digits = TRUE;
         else if( preg_match( self::DMYYYY_REGEX, $dmy_date ))    $year_2digits = FALSE;
         else                                                     return FALSE;
-
+        
         // DMY -> YMD
         // Accept multiple DateTime formats
         if( preg_match( self::DMY_REGEX, $dmy_date ))
@@ -183,9 +183,9 @@ class Date
 
     /**
      * Returns converted date/time to another time zone
-     *
+     * 
      * @see http://www.epochconverter.com/programming/functions-php.php
-     *
+     * 
      * @param $date             Original date/time
      * @param $timezone_from    Original timezone
      * @param $timezone_to      Timezone wanted
@@ -195,8 +195,8 @@ class Date
         // DateTime can cause problems if the date is empty. Let's avoid it.
         if( !$date )    return "";
 
-        return date_create($date, new DateTimeZone($timezone_from))
-                   ->setTimezone(new DateTimeZone($timezone_to))->format(self::YMD_HMS_FORMAT);
+        return date_create($date, new \DateTimeZone($timezone_from))
+                   ->setTimezone(new \DateTimeZone($timezone_to))->format(self::YMD_HMS_FORMAT);
     }
 }
 
