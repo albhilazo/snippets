@@ -1,4 +1,12 @@
+body, html { height: 100%; }
+
 body {
-    padding: 0px 22px;
     font: 13px/150% Verdana, Tahoma, sans-serif;
+    padding: 0px 22px;
     }
+
+.inline,
+.fit-child { display: inline-block; }
+.disabled  { background-color: #f3f3f3; }
+.hidden    { display: none; }
+.no-margin { margin: 0px; }
