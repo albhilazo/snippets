@@ -1,6 +1,7 @@
 <?php
 /****************************************************************************************
  *  @author     Albert Hilazo                                                           *
+ *  @version    1.0.0                                                                   *
  *                                                                                      *
  *  Static procedures:                                                                  *
  *      get_DMY( $ymd_date )                                                            *
