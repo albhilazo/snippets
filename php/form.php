@@ -1,6 +1,7 @@
 <?php
 /********************************************************************************
  *  @author     Albert Hilazo                                                   *
+ *  @version    1.1.0                                                           *
  *                                                                              *
  *  Input:                                                                      *
  *      __construct( $name, $id, $value, $placeholder, $label, $class )         *
