@@ -27,7 +27,9 @@
 /* Heading text styles ************************************************************************** */
 
 /* Inset text (Webkit only, with fallback)
- *   http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html */
+ * http://codepen.io/Shono/pen/LhqDF
+ *
+ * Source: http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html */
 h1, b {
     color: #2f96b4;
     background: -webkit-linear-gradient(transparent,transparent), #2f96b4;
