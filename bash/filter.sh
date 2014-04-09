@@ -4,7 +4,7 @@
 egrep -v '(^#|^\s*$|^\s*\t*#)' $file
 
 # Count lines ignoring spaces and empty lines
-grep -c '[^[:space:]]' $file
+grep -c '[^[:space:]*$]' $file
 
 
 
