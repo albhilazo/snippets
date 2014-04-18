@@ -1,18 +1,20 @@
 #!/bin/bash
 
-##################################################################
-##                                                              ##
-##    Description                                               ##
-##                                                              ##
-##    Syntax: .sh <parameters> [ <file> | <whatever> ]          ##
-##            .sh [ -h | --help ]                               ##
-##                                                              ##
-##    Parameters:                                               ##
-##            -op1    Foo bar                                   ##
-##            -op2    Foo bar                                   ##
-##            -op3    Foo bar                                   ##
-##                                                              ##
-##################################################################
+############################################################
+##    @author     Albert Hilazo                           ##
+##    @version    1.0.0                                   ##
+##                                                        ##
+##    Description                                         ##
+##                                                        ##
+##    Syntax: .sh <parameters> [ <file> | <whatever> ]    ##
+##            .sh [ -h | --help ]                         ##
+##                                                        ##
+##    Parameters:                                         ##
+##            -op1    Foo bar                             ##
+##            -op2    Foo bar                             ##
+##            -op3    Foo bar                             ##
+##                                                        ##
+############################################################
 
 
 path=$(dirname $(readlink -f $0))    # Script path. Resolves symlinks.
@@ -27,13 +29,7 @@ dir=/foo/bar
 function showHelp
 {
     echo -e "\n$me help:"
-    echo -e "\tDescription\n"
-    echo -e "\tSyntax: $me <parameters> [ <file> | <whatever> ]"
-    echo -e "\t        $me [ -h | --help ]\n"
-    echo -e "\tParameters:"
-    echo -e "\t\t-op1    Foo bar"
-    echo -e "\t\t-op2    Foo bar"
-    echo -e "\t\t-op3    Foo bar\n"
+    sed '1,/\#\#\#\#/d;/\#\#\#\#/,$d;/ @/d;s/\#\#//g' $0
     exit 0
 }
 
@@ -62,10 +58,7 @@ fi
 
 
 # Check params
-if [ $# -eq 0 ]
-then
-    showHelp
-fi
+[ $# -eq 0 ] && showHelp
 for param in "$@"
 do
     case "$param" in
