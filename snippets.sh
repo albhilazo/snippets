@@ -81,6 +81,8 @@ function setEditor
         tmpfile=/tmp/$me.tmp
         cat $0 | sed "s/^editor=[a-zA-Z0-9._-]*/editor=$cmd/g" > $tmpfile
         mv $tmpfile $originalfile
+        echo -e "\nFollowing snippets will open using $1 editor\n"
+        exit 0
     fi
 }
 
@@ -99,8 +101,7 @@ function getSnippet
         snippetfile=$(ls $path/$lang/$snippet.* 2>/dev/null)
         tmpfile=/tmp/$(basename $snippetfile)
         cat $snippetfile > $tmpfile
-        $editor $tmpfile
-        rm $tmpfile
+        $editor $tmpfile &
         exit 0
     else
         echo -e "\n[ERROR] Could not relate the snippet to an existing file\n"
