@@ -25,7 +25,7 @@ $('ul.nav>li>a').click(function(e) {
 
 /* Go-top button **********************************************************************************/
 /** HTML **
-<a id="goTop" class="img-circle">
+<a id="goTop">
     <i class="top-icon icon-chevron-up icon-white"></i>
 </a>
 */
@@ -38,6 +38,10 @@ $('ul.nav>li>a').click(function(e) {
     right: 20px;
     bottom: 20px;
     z-index: 99;
+
+    -webkit-border-radius: 500px;
+       -moz-border-radius: 500px;
+            border-radius: 500px;
     }
 #goTop:hover { background: #2f96b4; }
 
