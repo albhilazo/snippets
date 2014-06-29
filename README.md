@@ -6,6 +6,8 @@ Current sections:
 
     Android
 
+    iOS
+
 	Bash
 
 	CSS
