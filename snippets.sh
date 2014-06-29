@@ -12,6 +12,7 @@
 ##                                                                        ##
 ##    Languages:                                                          ##
 ##            android                                                     ##
+##            ios                                                         ##
 ##            bash                                                        ##
 ##            css                                                         ##
 ##            js                                                          ##
