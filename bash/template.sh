@@ -71,7 +71,7 @@ do
         * )
             if [ $param != "$input" ]
             then
-                echo -e "\n\t[ERROR] Invalid $param parameter\n"
+                echo -e "\n[ERROR] Invalid parameter: $param"
                 showHelp
             fi
         ;;
