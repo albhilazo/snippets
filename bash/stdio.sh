@@ -32,3 +32,19 @@ grep "bar" <<< "foo bar"
     do
         # something
     done <<< "$aux"
+
+
+
+
+# ************************************************************************************************ #
+# Confirm
+#
+
+echo -ne "Continue? [Y/n]? "
+read -s -n 1 confirm
+
+# [Y/n]
+[ -n $confirm ] && [ $confirm != 'Y' ] && [ $confirm != 'y' ] && echo "" && return
+
+# [y/N]
+[ -z $confirm ] && return || [ $confirm != 'Y' ] && [ $confirm != 'y' ] && echo "" && return
