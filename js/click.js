@@ -1,7 +1,48 @@
+/* Identify mouse button ************************************************************************ */
+
+/**
+ * Detect right mouse button
+ */
+$(document).on('contextmenu', '#specific-element', function(e){
+    alert('Right click detected')
+    return false;
+});
+
+
+
+
+/**
+ * Detect any mouse button
+ * @see {@link http://api.jquery.com/event.which/}
+ */
+$('#element').mousedown(function(e){
+    switch (e.which) {
+        case 1:
+            alert('Left click detected');
+            break;
+        case 2:
+            alert('Middle click detected');
+            break;
+        case 3:
+            alert('Right click detected');
+            break;
+        default:
+            alert('Moar buttons!');
+    }
+});
+
+
+
+
+
+
+
+
 /* Detect click outside an element ************************************************************** */
 
-/* One click event
- * @see http://stackoverflow.com/a/7385673/2629765
+/**
+ * One click event
+ * @see {@link http://stackoverflow.com/a/7385673/2629765}
  */
 $(document).mouseup(function(e) {
     var container = $('#element-container');
@@ -15,8 +56,9 @@ $(document).mouseup(function(e) {
 
 
 
-/* Two click events
- * @see http://stackoverflow.com/a/153047/2629765
+/**
+ * Two click events
+ * @see {@link http://stackoverflow.com/a/153047/2629765}
  */
 $('html').click(function() {
     // Hide the element or whatever
@@ -30,8 +72,9 @@ $('#element-container').click(function(e) {
 
 
 
-/* Specific for Bootstrap Popover (see source link for other variants)
- * @see http://stackoverflow.com/a/14857326/2629765
+/**
+ * Specific for Bootstrap Popover (see source link for other variants)
+ * @see {@link http://stackoverflow.com/a/14857326/2629765}
  */
 $('html').on('click', function(e) {
     $('[data-toggle="popover"]').each(function () {
