@@ -13,7 +13,7 @@ $(document).on('contextmenu', '#specific-element', function(e){
 
 /**
  * Detect any mouse button
- * @see {@link http://api.jquery.com/event.which/}
+ * @see {@link http://api.jquery.com/event.which}
  */
 $('#element').mousedown(function(e){
     switch (e.which) {
@@ -28,6 +28,33 @@ $('#element').mousedown(function(e){
             break;
         default:
             alert('Moar buttons!');
+    }
+});
+
+
+
+
+
+
+
+
+/* Detect key modifiers ************************************************************************* */
+
+/**
+ * Key + click
+ * @see {@link http://api.jquery.com/category/events/event-object}
+ */
+$('#element').click(function(e){
+    if (e.shiftKey) {
+        alert('Shift+Click');
+    } else if (e.ctrlKey) {
+        alert('Ctrl+Click');
+    } else if (e.altKey) {
+        alert('Alt+Click');
+    } else if (e.metaKey) {
+        alert('Cmd+Click');
+    } else {
+        alert('Normal click');
     }
 });
 
