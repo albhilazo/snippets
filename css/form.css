@@ -1,0 +1,8 @@
+/* Form styles */
+.form-inline label { margin-right: 15px; }
+.form-inline input { height: 18px; }
+
+.form-text *        { display: block; }
+.form-text label    { margin-bottom: 5px; }
+.form-text textarea { width: 360px; height: 150px; margin-bottom: 5px; }
+.form-text button[type='submit'] { float: right; }

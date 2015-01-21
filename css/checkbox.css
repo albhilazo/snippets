@@ -1,0 +1,48 @@
+/**
+ * Custom checkbox
+ * @link  http://codepen.io/albhilazo/pen/Jhrvf
+ */
+/* HTML *
+<label class="chk-ah"><input type="checkbox">Check</label>
+*/
+label.chk-ah,
+     .chk-ah {
+        background-color: #0693be;
+        color: #fff;
+
+        border: 0px none;
+        -webkit-border-radius: 3px;
+           -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+             -o-border-radius: 3px;
+                border-radius: 3px;
+
+        display: inline-block;
+        height: auto;
+        line-height: 20px;
+        padding: 4px 12px;
+        margin-bottom: 3px;
+        cursor: pointer;
+
+        font-family: Verdana, Tahoma, sans-serif;
+        font-size: 13px;
+        font-weight: normal;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #3d768a;
+
+        -webkit-user-select: none;
+         -khtml-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        }
+
+label.chk-ah:hover,
+     .chk-ah:hover { background-color: #339dbd; }
+
+label.chk-ah>input,
+     .chk-ah>input {
+        margin: 0 3px 1px 0;
+        vertical-align: middle;
+        cursor: pointer
+        }

@@ -1,3 +1,21 @@
+/**
+ * Description
+ * @author   Albert Hilazo
+ * @version  1.0.0
+ */
+
+/* Color palette
+ *   inactive border:       #bada55
+ *   inactive background:   #bada55
+ *   inactive color:        #bada55
+ *   active border:         #bada55
+ *   active background:     #bada55
+ *   active color:          #bada55
+ *   hover border:          #bada55
+ *   hover background:      #bada55
+ *   hover color:           #bada55
+ */
+
 body, html { height: 100%; }
 
 body {
@@ -5,8 +23,17 @@ body {
     padding: 0px 22px;
     }
 
+section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
+
+input, select { width: 146px; }
+input.error   { background-color: #f2dede; border-color: #b94a48; }
+textarea[readonly] { background-color: #EBEBE4; }
+
 .inline,
 .fit-child { display: inline-block; }
 .disabled  { background-color: #f3f3f3; }
-.hidden    { display: none; }
+.hidden    { display: none !important; }
 .no-margin { margin: 0px; }

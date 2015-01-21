@@ -1,11 +1,11 @@
-/*
+/**
  * Custom button
- * http://codepen.io/Shono/pen/Jhrvf
+ * @link  http://codepen.io/albhilazo/pen/Jhrvf
  */
-button.btn-custom,
-   div.btn-custom,
-     a.btn-custom,
-      .btn-custom {
+button.btn-ah,
+   div.btn-ah,
+     a.btn-ah,
+      .btn-ah {
         background-color: #0693be;
         color: #fff;
 
@@ -36,17 +36,17 @@ button.btn-custom,
         text-shadow: 0px 1px 0px #3d768a;
         }
 
-button.btn-custom:enabled:hover,
-   div.btn-custom:enabled:hover,
-     a.btn-custom:enabled:hover,
-      .btn-custom:enabled:hover {
+button.btn-ah:enabled:hover,
+   div.btn-ah:enabled:hover,
+     a.btn-ah:enabled:hover,
+      .btn-ah:enabled:hover {
         background-color: #339dbd;
         }
 
-button.btn-custom:enabled:active,
-   div.btn-custom:enabled:active,
-     a.btn-custom:enabled:active,
-      .btn-custom:enabled:active {
+button.btn-ah:enabled:active,
+   div.btn-ah:enabled:active,
+     a.btn-ah:enabled:active,
+      .btn-ah:enabled:active {
         position: relative;
         top: 3px;
         -webkit-box-shadow: none;
@@ -56,10 +56,13 @@ button.btn-custom:enabled:active,
                 box-shadow: none;
         }
 
-button.btn-custom:disabled,
-   div.btn-custom:disabled,
-     a.btn-custom:disabled,
-      .btn-custom:disabled {
+button.btn-ah:disabled,
+   div.btn-ah:disabled,
+     a.btn-ah:disabled,
+      .btn-ah:disabled {
         cursor: not-allowed;
         opacity: 0.65;
         }
+
+
+.btn-min { line-height: normal !important; }

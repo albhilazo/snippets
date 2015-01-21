@@ -7,3 +7,18 @@
 .foo      { color: black; } /* Awesome browsers */
 .ie8 .foo { color: green; } /* IE8 */
 .ie7 .foo { color: blue; }  /* IE7- */
+
+
+
+
+/* Class for IE placeholder fix */
+.placeholder { color: #aaa !important }
+
+
+/* Input cropped in IE7 when containing absolute positioning */
+.ie7 .datepicker { overflow: hidden; }
+
+/* No CSS3 Transforms support */
+.ie7 ul.spinner,
+.ie8 ul.spinner,
+.ie9 ul.spinner { display: none; }

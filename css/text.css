@@ -1,7 +1,9 @@
 /* Text styles */
+.black-text  { color: #333;}
 .grey-text   { color: #575757; }
 .center-text { text-align: center !important; }
 .hide-text   { font-size: 0; }
+.no-height   { line-height: 0 !important; }
 .uppercase   { text-transform: uppercase; }
 
 
@@ -24,13 +26,17 @@
 
 
 
-/* Heading text styles ************************************************************************** */
+/* Heading text styles **************************************************************** */
 
-/* Inset text (Webkit only, with fallback)
- * http://codepen.io/Shono/pen/LhqDF
+/**
+ * Inset text (Webkit only, with fallback)
+ * @link    http://codepen.io/albhilazo/pen/LhqDF
  *
- * Source: http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html */
-h1, b {
+ * Source: {@link http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html}
+ */
+.inset-text {
+    font: 30px/150% Verdana, Tahoma, sans-serif;
+    font-weight: bold;
     color: #2f96b4;
     background: -webkit-linear-gradient(transparent,transparent), #2f96b4;
     -webkit-text-fill-color: transparent;
