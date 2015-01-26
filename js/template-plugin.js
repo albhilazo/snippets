@@ -12,6 +12,11 @@
  *     $objChained.albhilazo_plugin({ optionFoo: 'bar' });
  *   or
  *     $.fn.albhilazo.plugin($objChained, { optionFoo: 'bar' });
+ *
+ * Methods:
+ *     $objChained.albhilazo_plugin('publicMethod');
+ *   or
+ *     $.fn.albhilazo.plugin($objChained).publicMethod();
  */
 
 
@@ -34,6 +39,13 @@
         // Avoid scope issues
         var self = this;
 
+        // Public
+        self.NAME = 'albhilazo.plugin';
+
+        // Private
+        var data = $(objChained).data(self.NAME);
+
+
         /** Default settings */
         self.settings = $.extend({
             optionFoo: 'default value'
@@ -46,8 +58,19 @@
          * Description
          * @param {Type} name - Description
          */
-        self.internalMethod = function() {
-            console.log('Internal method');
+        var _privateMethod = function() {
+            console.log('Private method');
+        };
+
+
+
+
+        /**
+         * Description
+         * @param {Type} name - Description
+         */
+        self.publicMethod = function() {
+            console.log('Public method');
         };
 
 
@@ -58,12 +81,17 @@
          */
         self.init = function() {
             console.log('Init plugin');
-            self.internalMethod();
+            _privateMethod();
+
+            // Set instance data
+            $(container).data(self.NAME, self);
         };
 
 
-        // Initialize
-        self.init();
+        if (data == undefined)
+            self.init();    // Initialize
+        else
+            return data;    // Instance data
 
     };
 
@@ -76,7 +104,18 @@
      */
     $.fn.albhilazo_plugin = function(options) {
         return this.each(function() {
-            (new $.fn.albhilazo.plugin(this, options));
+            var data = $(this).data('albhilazo.plugin');
+            if (data == undefined)
+                // Set instance data
+                $(this).data('albhilazo.plugin', (new $.fn.albhilazo.plugin(this, options)));
+            if (typeof options == 'string') {
+                // Manage methods
+                if (data[options])
+                    data[options]();
+                else
+                    console.error('ERROR (albhilazo.plugin): "' + options
+                                  + '" is not a supported method.');
+            }
         });
     };
 
