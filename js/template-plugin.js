@@ -41,15 +41,16 @@
 
         // Public
         self.NAME = 'albhilazo.plugin';
+        self.settings = {};
 
         // Private
         var data = $(objChained).data(self.NAME);
 
 
         /** Default settings */
-        self.settings = $.extend({
+        var _defaults = {
             optionFoo: 'default value'
-        }, options);
+        };
 
 
 
@@ -80,6 +81,9 @@
          * Initializer.
          */
         self.init = function() {
+            // Set settings
+            self.settings = $.extend({}, _defaults, options);
+            
             console.log('Init plugin');
             _privateMethod();
 
