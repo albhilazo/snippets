@@ -10,8 +10,6 @@
  *
  * Usage:
  *     $objChained.albhilazo_plugin({ optionFoo: 'bar' });
- *   or
- *     $.fn.albhilazo.plugin($objChained, { optionFoo: 'bar' });
  *
  * Methods:
  *     $objChained.albhilazo_plugin('publicMethod');
@@ -83,12 +81,9 @@
         self.init = function() {
             // Set settings
             self.settings = $.extend({}, _defaults, options);
-            
+
             console.log('Init plugin');
             _privateMethod();
-
-            // Set instance data
-            $(container).data(self.NAME, self);
         };
 
 
