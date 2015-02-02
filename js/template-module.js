@@ -21,6 +21,13 @@ var Module = new (function() {
     // Avoid scope issues
     var self = this;
 
+    // Private
+    var _privateVar = 'foo';
+
+    // Public
+    self.publicVar = 'bar';
+
+
     /** Default settings */
     var _settings = {
         optionFoo: 'default value'
@@ -29,23 +36,27 @@ var Module = new (function() {
 
 
 
+    /* Private methods **************************************************************** */
+
     /**
      * Description
      * @param {Type} name - Description
      */
     var _privateMethod = function() {
-        console.log('privateMethod');
+        console.log('privateMethod: '+_privateVar+self.publicVar);
     };
 
 
 
+
+    /* Public methods ***************************************************************** */
 
     /**
      * Description
      * @param {Type} name - Description
      */
     self.publicMethod = function() {
-        console.log('publicMethod');
+        console.log('publicMethod: '+_privateVar+self.publicVar);
     };
 
 
