@@ -37,3 +37,5 @@ textarea[readonly] { background-color: #EBEBE4; }
 .disabled  { background-color: #f3f3f3; }
 .hidden    { display: none !important; }
 .no-margin { margin: 0px; }
+.left      { float: left; }
+.right     { float: right; }
