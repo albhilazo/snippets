@@ -12,8 +12,17 @@ div.dropdown:after {
     border-top-color: #000;
     }
 
-/* Dropdown node needs "position:relative" for the arrow */
 div.dropdown {
+    /* Dropdown node needs "position:relative" for the arrow */
     position: relative;
     padding-right: 15px;
-}
+    }
+
+
+
+
+/* Checkmark */
+div.check:after,
+a:visited:before {
+    content: "\2713";
+    }
