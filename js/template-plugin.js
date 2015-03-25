@@ -18,7 +18,8 @@
  */
 
 
-;(function($){
+;(function($) {
+    "use strict";
 
     // Check namespace
     if (!$.fn.albhilazo) {
@@ -47,7 +48,27 @@
 
         /** Default settings */
         var _defaults = {
-            optionFoo: 'default value'
+            optionFoo: 'default value',
+            debug: false
+        };
+
+
+
+
+        /* Private methods ************************************************************ */
+
+        /**
+         * Outputs a console message only if settings.debug is enabled.
+         * @param {String} msj - Message to output.
+         * @param {Boolean} isError - Optional, defaults to FALSE. If TRUE outputs as error.
+         */
+        var _debug = function(msj, isError) {
+            if (self.settings.debug) {
+                if (typeof isError !== 'boolean') { isError = false; }
+
+                if (isError) { console.error(msj); }
+                else         { console.log(msj); }
+            }
         };
 
 
@@ -63,6 +84,8 @@
 
 
 
+
+        /* Public methods ************************************************************* */
 
         /**
          * Description
@@ -87,10 +110,11 @@
         };
 
 
-        if (data == undefined)
+        if (data == undefined) {
             self.init();    // Initialize
-        else
+        } else {
             return data;    // Instance data
+        }
 
     };
 
@@ -104,16 +128,17 @@
     $.fn.albhilazo_plugin = function(options) {
         return this.each(function() {
             var data = $(this).data('albhilazo.plugin');
-            if (data == undefined)
+            if (data == undefined) {
                 // Set instance data
                 $(this).data('albhilazo.plugin', (new $.fn.albhilazo.plugin(this, options)));
+            }
             if (typeof options == 'string') {
                 // Manage methods
-                if (data[options])
+                if (data[options]) {
                     data[options]();
-                else
-                    console.error('ERROR (albhilazo.plugin): "' + options
-                                  + '" is not a supported method.');
+                } else {
+                    console.error('ERROR (albhilazo.plugin): "'+options+'" is not a supported method.');
+                }
             }
         });
     };
