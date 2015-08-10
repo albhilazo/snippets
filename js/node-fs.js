@@ -19,6 +19,8 @@ var fileContent = fs.readFileSync(filePath, 'utf8');
  */
 var fileContent;
 fs.readFile(filePath, function(err, buffer) {
+	if (err) { return console.error(err); }
+
     fileContent = buffer.toString();
     // it's sync if the output is outside the callback
     console.log(fileContent);
@@ -36,6 +38,8 @@ fs.readFile(filePath, 'utf8', function(err, string) {});
 /* Read Directory ******************************************************************************* */
 
 fs.readdir(dirPath, function(err, list) {
+	if (err) { return console.error(err); }
+	
     list.forEach(function(file, i) {
     	// file == string
     });
