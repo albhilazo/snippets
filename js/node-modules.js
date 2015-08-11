@@ -5,13 +5,13 @@
  */
 module.exports = function(params, callback) {
 
-	// readdir only as example for the cascading errors
-	fs.readdir(dirPath, function(err, list) {
+	// example callback for the cascading errors
+	foo(function(err, data) {
 		// check for errors and do early-returns within callback
 		if (err) { return callback(err); }
 
 		// all went well, call callback with 'null' for the error argument
-		callback(null, param);
+		callback(null, data);
 	});
 
 };
