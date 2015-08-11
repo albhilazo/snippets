@@ -6,6 +6,9 @@ var path = require('path');
 /**
  * Sync
  */
+// Buffer objects are arbitrary arrays of data,
+//   whether it be ascii, binary or other format
+// Buffer objects can be converted to strings
 var fileBuffer  = fs.readFileSync(filePath);
 var fileContent = fileBuffer.toString();
 // OR
@@ -41,7 +44,7 @@ fs.readdir(dirPath, function(err, list) {
 	if (err) { return console.error(err); }
 	
     list.forEach(function(file, i) {
-    	// file == string
+    	// file === string
     });
 });
 
