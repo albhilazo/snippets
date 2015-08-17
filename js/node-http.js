@@ -10,7 +10,7 @@ var url  = require('url');
 /**
  * Events
  */
-http.get(url, function(response) {
+http.get(urlstr, function(response) {
     // the response object is a Node Stream object
     // you can treat Node Streams as objects that emit events
     // the three events that are of most interest are: "data", "error" and "end"
@@ -28,7 +28,7 @@ http.get(url, function(response) {
 /**
  * Collect Stream
  */
-http.get(url, function(response) {
+http.get(urlstr, function(response) {
     // to collect all data, not just the first data event
     // bl third-party package to collect from streams
     // another alternative is concat-stream
