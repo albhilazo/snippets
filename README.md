@@ -7,7 +7,7 @@ Collection of snippets for multiple languages or libraries.
 + iOS
 + Bash
 + CSS
-+ JavaScript (jQuery)
++ JavaScript (jQuery, Node)
 + PHP
 
 ## Terminal access

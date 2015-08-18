@@ -23,7 +23,7 @@
 
 path=$(dirname $(readlink -f $0))    # Script path. Resolves symlinks.
 me=$(basename $0)                    # script.sh
-editor=sublime-text
+editor=xdg-open
 
 
 
